@@ -10,4 +10,4 @@ install:
 script:
   - mono --runtime=v4.0.30319 nuget.exe restore
   - xbuild /p:Configuration=Mono BayesSharp.sln
-  - nunit-console Tests/UnitTests/bin/Debug/BayesSharp.UnitTests.dll
+  - nunit-console Tests/UnitTests/bin/Mono/BayesSharp.UnitTests.dll
