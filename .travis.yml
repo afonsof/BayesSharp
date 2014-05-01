@@ -9,5 +9,5 @@ install:
   - mozroots --import --sync
 script:
   - mono --runtime=v4.0.30319 nuget.exe restore
-  - xbuild BayesSharp.sln
+  - xbuild /p:Configuration=Mono BayesSharp.sln
   - nunit-console Tests/UnitTests/bin/Debug/BayesSharp.UnitTests.dll

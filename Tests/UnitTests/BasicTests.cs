@@ -89,6 +89,7 @@ namespace BayesSharp.UnitTests
             Assert.AreEqual(0.9999, output["bom"]);
         }
 
+#if !MONO
         [Test]
         public void TestSaveAndLoad()
         {
@@ -107,6 +108,7 @@ namespace BayesSharp.UnitTests
             Assert.AreEqual(1, output.Count);
             Assert.AreEqual(0.9999, output["teste"]);
         }
+#endif
 
         [Test]
         public void TestUntrain()

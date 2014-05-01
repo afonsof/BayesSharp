@@ -8,15 +8,20 @@ EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
+		Mono|Any CPU = Mono|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{BD607AA2-7660-4946-8383-623E5E842BBC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{BD607AA2-7660-4946-8383-623E5E842BBC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BD607AA2-7660-4946-8383-623E5E842BBC}.Mono|Any CPU.ActiveCfg = Mono|Any CPU
+		{BD607AA2-7660-4946-8383-623E5E842BBC}.Mono|Any CPU.Build.0 = Mono|Any CPU
 		{BD607AA2-7660-4946-8383-623E5E842BBC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BD607AA2-7660-4946-8383-623E5E842BBC}.Release|Any CPU.Build.0 = Release|Any CPU
 		{F9441D64-B402-4F15-9755-2E672E3E75F2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{F9441D64-B402-4F15-9755-2E672E3E75F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F9441D64-B402-4F15-9755-2E672E3E75F2}.Mono|Any CPU.ActiveCfg = Mono|Any CPU
+		{F9441D64-B402-4F15-9755-2E672E3E75F2}.Mono|Any CPU.Build.0 = Mono|Any CPU
 		{F9441D64-B402-4F15-9755-2E672E3E75F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F9441D64-B402-4F15-9755-2E672E3E75F2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
