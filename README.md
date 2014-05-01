@@ -1,5 +1,7 @@
 [![Built with Grunt](https://cdn.gruntjs.com/builtwith.png)](http://gruntjs.com/)
 
+[![Build Status](https://travis-ci.org/afonsof/BayesSharp.svg)](https://travis-ci.org/afonsof/BayesSharp)
+
 BayesSharp
 ==========
 
@@ -10,30 +12,33 @@ Simple Naive Bayes text classifier
 #### 1. Setting Up
 
 Create a Console Application and install BayesSharp using Nuget:
-
 ```
 PM> Install-Package BayesSharp
 ```
 
 #### 2. Instantiate the BayesSimpleTextClassifier class
-
 ```c#
  var c = new BayesSimpleTextClassifier();
 ```
 
-#### 2. Train the classifier with some data
+#### 3. Train the classifier with some data
 ```c#
-c.Train("spam", "Buy now some pills");
-c.Train("ham", "Hello my friend, I miss you");
+c.Train("spam", "Buy now some pills. You'll receive a free prize");
+c.Train("not spam", "Hello my friend, I miss you. I want to meet you soon.");
 ```
 
-#### 3. Classify a new text
+#### 4. Classify a new text
 ```c#
-var result = c.Classify("Hi my friend, I want to buy a car");
+var result = c.Classify("Hi my friend, I want to buy a gift for you");
 foreach(var item in result)
 {
-    Console.WriteLine(item.Key + ":" + item.Value);
+    Console.WriteLine(item.Key + ": " + item.Value);
 }
+```
+In this case, the output will be:
+```
+not spam :0,946523050631535
+spam: 0,748693773755381
 ```
 
 
