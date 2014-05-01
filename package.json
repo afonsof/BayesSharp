@@ -1,0 +1,26 @@
+{
+  "name": "BayesSharp",
+  "version": "0.1.0",
+  "description": "Simple Naive Bayes text classifier",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/afonsof/BayesSharp.git"
+  },
+  "author": "Afonso França",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/afonsof/BayesSharp/issues"
+  },
+  "homepage": "https://github.com/afonsof/BayesSharp",
+  "devDependencies": {
+    "grunt-nuget": "~0.1.1",
+    "grunt": "~0.4.2",
+    "grunt-dotnet-assembly-info": "~1.0.9",
+    "time-grunt": "~0.2.8",
+    "load-grunt-tasks": "~0.3.0",
+    "grunt-shell": "~0.6.4",
+    "grunt-nunit-runner": "~1.0.16",
+    "grunt-msbuild": "~0.1.9"
+  }
+}
