@@ -8,7 +8,7 @@ module.exports = function(grunt) {
   
     nugetpush: {
         dist: {
-            src: 'pub/*.nupkg'
+            src: 'pub/BayesSharp.<%= pkg.version %>.0.nupkg'
         }
     },
     

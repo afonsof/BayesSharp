@@ -9,7 +9,7 @@ using Newtonsoft.Json;
 
 namespace BayesSharp
 {
-    public class BayesClassifier<TTokenType, TTagType> where TTagType: IComparable
+    public class BayesClassifier<TTokenType, TTagType> where TTagType : IComparable
     {
         private TagDictionary<TTokenType, TTagType> _tags = new TagDictionary<TTokenType, TTagType>();
         private TagDictionary<TTokenType, TTagType> _cache;
@@ -120,7 +120,7 @@ namespace BayesSharp
         }
 
         /// <summary>
-        /// Save Bayes Text Classifier into a file
+        /// Load Bayes Text Classifier from a file
         /// </summary>
         /// <param name="path">The file to open for reading</param>
         public void Load(string path)
@@ -133,6 +133,24 @@ namespace BayesSharp
                 }
             }
             _mustRecache = true;
+        }
+
+        /// <summary>
+        /// Import Bayes Text Classifier from a json string
+        /// </summary>
+        /// <param name="json">The json content to be loaded</param>
+        public void ImportJsonData(string json)
+        {
+            _tags = JsonConvert.DeserializeObject<TagDictionary<TTokenType, TTagType>>(json);
+            _mustRecache = true;
+        }
+
+        /// <summary>
+        /// Export Bayes Text Classifier to a json string
+        /// </summary>
+        public string ExportJsonData()
+        {
+            return JsonConvert.SerializeObject(_tags);
         }
 
         /// <summary>

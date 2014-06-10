@@ -1,6 +1,6 @@
 {
   "name": "BayesSharp",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Simple Naive Bayes text classifier",
   "scripts": {},
   "repository": {
