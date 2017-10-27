@@ -201,23 +201,28 @@ namespace BayesSharp
         /// <param name="input">Input to be classified</param>
         public Dictionary<TTagType, double> Classify(string input)
         {
-            var tokens = _tokenizer.Tokenize(input).ToList();
-            var tags = CreateCacheAnsGetTags();
-
-            var stats = new Dictionary<TTagType, double>();
-
-            foreach (var tag in tags.Items)
-            {
-                var probs = GetProbabilities(tag.Value, tokens).ToList();
-                if (probs.Count() != 0)
-                {
-                    stats[tag.Key] = _combiner.Combine(probs);
-                }
-            }
-            return stats.OrderByDescending(s => s.Value).ToDictionary(s => s.Key, pair => pair.Value);
+           var tokens = _tokenizer.Tokenize(input).ToList();
+           return Classify(tokens);
         }
 
-        #region Private Methods
+       private Dictionary<TTagType, double> Classify(List<TTokenType> tokens)
+       {
+          var tags = CreateCacheAnsGetTags();
+
+          var stats = new Dictionary<TTagType, double>();
+
+          foreach (var tag in tags.Items)
+          {
+             var probs = GetProbabilities(tag.Value, tokens).ToList();
+             if (probs.Count() != 0)
+             {
+                stats[tag.Key] = _combiner.Combine(probs);
+             }
+          }
+          return stats.OrderByDescending(s => s.Value).ToDictionary(s => s.Key, pair => pair.Value);
+       }
+
+       #region Private Methods
 
         public void Train(TagData<TTokenType> tag, IEnumerable<TTokenType> tokens)
         {
