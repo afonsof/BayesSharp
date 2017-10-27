@@ -219,7 +219,7 @@ namespace BayesSharp
 
         #region Private Methods
 
-        private void Train(TagData<TTokenType> tag, IEnumerable<TTokenType> tokens)
+        public void Train(TagData<TTokenType> tag, IEnumerable<TTokenType> tokens)
         {
             var tokenCount = 0;
             foreach (var token in tokens)
