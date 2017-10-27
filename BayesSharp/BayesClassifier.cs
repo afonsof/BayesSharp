@@ -170,7 +170,7 @@ namespace BayesSharp
         {
             var tokens = _tokenizer.Tokenize(input);
             var tag = GetAndAddIfNotFound(_tags.Items, tagId);
-            _train(tag, tokens);
+            Train(tag, tokens);
             _tags.SystemTag.TrainCount += 1;
             tag.TrainCount += 1;
             _mustRecache = true;
@@ -189,7 +189,7 @@ namespace BayesSharp
             {
                 return;
             }
-            _untrain(tag, tokens);
+            Untrain(tag, tokens);
             _tags.SystemTag.TrainCount += 1;
             tag.TrainCount += 1;
             _mustRecache = true;
@@ -219,7 +219,7 @@ namespace BayesSharp
 
         #region Private Methods
 
-        private void _train(TagData<TTokenType> tag, IEnumerable<TTokenType> tokens)
+        private void Train(TagData<TTokenType> tag, IEnumerable<TTokenType> tokens)
         {
             var tokenCount = 0;
             foreach (var token in tokens)
@@ -234,7 +234,7 @@ namespace BayesSharp
             _tags.SystemTag.TokenCount += tokenCount;
         }
 
-        private void _untrain(TagData<TTokenType> tag, IEnumerable<TTokenType> tokens)
+        public void Untrain(TagData<TTokenType> tag, IEnumerable<TTokenType> tokens)
         {
             foreach (var token in tokens)
             {
